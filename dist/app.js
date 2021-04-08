@@ -95,8 +95,21 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-!(function webpackMissingModule() { var e = new Error("Cannot find module './styles/index.min.css'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+/* harmony import */ var _routers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./routers */ "./src/routers/index.js");
+/* harmony import */ var _routers__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_routers__WEBPACK_IMPORTED_MODULE_0__);
 
+
+
+/***/ }),
+
+/***/ "./src/routers/index.js":
+/*!******************************!*\
+  !*** ./src/routers/index.js ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/* 侧边栏 */
 
 
 /***/ })

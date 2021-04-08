@@ -10,6 +10,10 @@ ol {
   list-style: none;
 }
 
+a {
+  text-decoration: none;
+}
+
 h1,
 h2,
 h3,
@@ -187,11 +191,90 @@ h6 {
   border-radius: 50%;
 }
 
+.main {
+  width: 100%;
+  position: relative;
+}
+
+.main .content {
+  width: 1392px;
+  margin-left: 72px;
+  min-height: 1px;
+  float: left;
+  border-bottom: 1px solid #e7e8e9;
+}
+
+.main .content .head-list {
+  height: 48px;
+}
+
+.main .content .head-list .checkbox {
+  float: left;
+  margin-left: 24px;
+}
+
+.main .content .head-list .checkbox span {
+  font-size: 22px;
+  line-height: 48px;
+  opacity: 0.4;
+}
+
+.main .content .head-list .checkbox span:hover {
+  background-color: rgba(60, 64, 67, 0.18);
+  opacity: 1;
+}
+
+.main .content .head-list .checkbox .icon-xiala1 {
+  font-size: 8px;
+}
+
+.main .content .head-list .more {
+  float: left;
+}
+
+.main .content .head-list .more .iconfont {
+  float: left;
+  font-size: 21px;
+  color: #5f6368;
+  border-radius: 50%;
+  display: block;
+  margin: 0 0px 0 12px;
+  padding: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  height: 24px;
+  width: 24px;
+  font-weight: bold;
+}
+
+.main .content .head-list .more .iconfont:hover {
+  background-color: rgba(60, 64, 67, 0.08);
+}
+
+.main .content .head-list .right {
+  position: relative;
+  float: right;
+  margin-right: 15px;
+  margin-top: 12px;
+}
+
+.main .content .head-list .right .icon-zuo {
+  position: absolute;
+  top: -2px;
+  right: 30px;
+  font-size: 23px;
+}
+
 .left-aside {
-  height: 604px;
-  width: 256px;
+  background-color: white;
+  position: fixed;
+  left: 0;
+  z-index: 100;
+  height: 684px;
+  width: 70px;
   box-shadow: 0 16px 10px 0 rgba(0, 0, 0, 0.14), 0 11px 18px 0 rgba(0, 0, 0, 0.12), 0 13px 5px -1px rgba(0, 0, 0, 0.2);
-  /*hover的时候变成72px */
+  transition: 0.5s;
+  /*hover的时候变成256px */
 }
 
 .left-aside .logo-write {
@@ -199,13 +282,13 @@ h6 {
   position: relative;
   color: #3c4043;
   margin: 16px 0;
-  padding: 0 0 0 8px;
+  padding: 2px 0 0 8px;
   border-radius: 28px;
   font-size: 0;
   height: 46px;
   padding: 0;
-  width: 126px;
-  margin-left: 8px;
+  width: 46px;
+  margin-left: 16px;
   transition: box-shadow 0.08s linear, min-width 0.15s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.302), 0 1px 3px 1px rgba(60, 64, 67, 0.149);
 }
@@ -223,7 +306,7 @@ h6 {
   content: "";
   display: block;
   height: 48px;
-  min-width: 56px;
+  min-width: 48px;
   position: absolute;
   top: 0px;
   left: 0px;
@@ -284,20 +367,20 @@ h6 {
   color: #202124;
 }
 
-.meeting {
+.left-aside .meeting {
   margin-top: 6px;
   padding-top: 10px;
   border-top: #e7e8e9 2px solid;
 }
 
-.meeting .item-meeting {
+.left-aside .meeting .item-meeting {
   border-radius: 16px;
   padding-left: 24px;
   width: 240px;
   height: 30px;
 }
 
-.hangouts {
+.left-aside .hangouts {
   margin-top: 6px;
   padding-bottom: 8px;
   padding-top: 10px;
@@ -305,7 +388,7 @@ h6 {
   border-bottom: #e7e8e9 2px solid;
 }
 
-.hangouts .item-hangout {
+.left-aside .hangouts .item-hangout {
   border-radius: 16px;
   padding-left: 24px;
   width: 240px;
@@ -313,11 +396,11 @@ h6 {
   position: relative;
 }
 
-.hangouts .item-hangout:hover {
+.left-aside .hangouts .item-hangout:hover {
   background-color: rgba(60, 64, 67, 0.18);
 }
 
-.hangouts .item-hangout .iconfont-user {
+.left-aside .hangouts .item-hangout .iconfont-user {
   background-image: url("../imgs/user.png");
   position: relative;
   font-size: 18px;
@@ -332,11 +415,11 @@ h6 {
   border-radius: 50%;
 }
 
-.hangouts .item-hangout .iconfont-user:hover {
+.left-aside .hangouts .item-hangout .iconfont-user:hover {
   background-color: rgba(60, 64, 67, 0.18);
 }
 
-.hangouts .item-hangout .iconfont-user .green {
+.left-aside .hangouts .item-hangout .iconfont-user .green {
   background: #146b03;
   display: block;
   width: 10px;
@@ -347,18 +430,18 @@ h6 {
   right: 0px;
 }
 
-.hangouts .item-hangout a {
+.left-aside .hangouts .item-hangout a {
   text-decoration: none;
   display: inline-block;
   margin-top: 3px;
 }
 
-.hangouts .item-hangout a span {
+.left-aside .hangouts .item-hangout a span {
   font-size: 14px;
   color: #202124;
 }
 
-.hangouts .item-hangout .icon-xiala {
+.left-aside .hangouts .item-hangout .icon-xiala {
   position: absolute;
   top: 8px;
   left: 105px;
@@ -366,9 +449,114 @@ h6 {
   font-size: 12px;
 }
 
-.hangouts .item-hangout .icon-jia {
+.left-aside .hangouts .item-hangout .icon-jia {
   position: absolute;
   top: 5px;
   right: 20px;
   color: rgba(60, 64, 67, 0.68);
+}
+
+.left-aside .chat-list {
+  font-size: 13px;
+  text-align: center;
+}
+
+.left-aside .chat-list .logo-chat {
+  background: no-repeat url("../imgs/chat-logo.png") -649px -108px;
+  width: 72px;
+  height: 72px;
+  margin: 18px auto 20px;
+}
+
+.left-aside .chat-list .newchat {
+  color: #1155cc;
+  text-decoration: none;
+}
+
+.left-aside .footer-list {
+  margin-top: 50px;
+  padding-top: 4px;
+  border-top: 2px solid #e7e8e9;
+  text-align: center;
+}
+
+.left-aside .footer-list .iconfont {
+  font-size: 22px;
+  opacity: 0.54;
+  margin: 0 6px;
+  cursor: pointer;
+}
+
+.right-aside {
+  position: absolute;
+  top: 0px;
+  right: 0;
+  width: 56px;
+  min-width: 56px;
+  height: 680px;
+  border-left: 2px #eaeaec solid;
+}
+
+.right-aside .list {
+  width: 100%;
+  height: 98%;
+  position: relative;
+}
+
+.right-aside .list .item {
+  cursor: pointer;
+  height: 56px;
+  outline: none;
+  pointer-events: none;
+  position: relative;
+  -webkit-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 56px;
+  text-align: center;
+}
+
+.right-aside .list .item .img {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20px 20px;
+  border-radius: 50%;
+  height: 40px;
+  pointer-events: auto;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 40px;
+  margin: 8px;
+  line-height: 40px;
+}
+
+.right-aside .list .item .img:hover {
+  background-color: rgba(60, 64, 67, 0.08);
+}
+
+.right-aside .list .item .cal {
+  background-image: url("../imgs/calendar.png");
+}
+
+.right-aside .list .item .keep {
+  background-image: url("../imgs/keep.png");
+}
+
+.right-aside .list .item .task {
+  background-image: url("../imgs/tasks2_2x.png");
+}
+
+.right-aside .list .item .contact {
+  background-image: url("../imgs/contacts_2x.png");
+}
+
+.right-aside .list .item i {
+  display: block;
+  margin: 12px auto;
+  width: 30px;
+  height: 1px;
+  background-color: rgba(202, 200, 200, 0.6);
+}
+
+.right-aside .list .item-foot {
+  bottom: 0;
+  position: absolute;
 }

@@ -7,6 +7,9 @@ li,
 ol {
   list-style: none;
 }
+a {
+  text-decoration: none;
+}
 h1,
 h2,
 h3,
@@ -166,26 +169,91 @@ h6 {
   }
 }
 //
+.main {
+  width: 100%;
+  position: relative;
+  .content {
+    width: 1392px;
+    margin-left: 72px;
+    min-height: 1px;
+    float: left;
+    border-bottom: 1px solid #e7e8e9;
+    .head-list {
+      height: 48px;
+      .checkbox {
+        float: left;
+        margin-left: 24px;
+        span {
+          font-size: 22px;
+          line-height: 48px;
+          opacity: 0.4;
+          &:hover {
+            background-color: rgba(60, 64, 67, 0.18);
+            opacity: 1;
+          }
+        }
+        .icon-xiala1 {
+          font-size: 8px;
+        }
+      }
+      .more {
+        float: left;
+        .iconfont {
+          float: left;
+          font-size: 21px;
+          color: #5f6368;
+          border-radius: 50%;
+          display: block;
+          margin: 0 0px 0 12px;
+          padding: 12px;
+          overflow: hidden;
+          cursor: pointer;
+          height: 24px;
+          width: 24px;
+          font-weight: bold;
+          &:hover {
+            background-color: rgba(60, 64, 67, 0.08);
+          }
+        }
+      }
+      .right {
+        position: relative;
+        float: right;
+        margin-right: 15px;
+        margin-top: 12px;
+        .icon-zuo {
+          position: absolute;
+          top: -2px;
+          right: 30px;
+          font-size: 23px;
+        }
+      }
+    }
+  }
+}
 .left-aside {
-  height: 604px;
-  width: 256px;
+  background-color: white;
+  position: fixed;
+  left: 0;
+  z-index: 100;
+  height: 684px;
+  width: 70px;
   box-shadow: 0 16px 10px 0 rgba(0, 0, 0, 0.14),
     0 11px 18px 0 rgba(0, 0, 0, 0.12), 0 13px 5px -1px rgba(0, 0, 0, 0.2);
-  /*hover的时候变成72px */
+  transition: 0.5s;
+  /*hover的时候变成256px */
   .logo-write {
     /* 98*46 */
     position: relative;
-
     color: #3c4043;
     margin: 16px 0;
-    padding: 0 0 0 8px;
+    padding: 2px 0 0 8px;
     border-radius: 28px;
     font-size: 0;
     height: 46px;
     padding: 0;
-    width: 126px;
-
-    margin-left: 8px;
+    width: 46px;
+    margin-left: 16px;
     transition: box-shadow 0.08s linear,
       min-width 0.15s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.302),
@@ -203,7 +271,7 @@ h6 {
       content: "";
       display: block;
       height: 48px;
-      min-width: 56px;
+      min-width: 48px;
       position: absolute;
       top: 0px;
       left: 0px;
@@ -256,81 +324,170 @@ h6 {
       }
     }
   }
-}
-.meeting {
-  margin-top: 6px;
-  padding-top: 10px;
-  border-top: #e7e8e9 2px solid;
-  .item-meeting {
-    border-radius: 16px;
-    padding-left: 24px;
-    width: 240px;
-    height: 30px;
-  }
-}
-.hangouts {
-  margin-top: 6px;
-  padding-bottom: 8px;
-  padding-top: 10px;
-  border-top: #e7e8e9 2px solid;
-  border-bottom: #e7e8e9 2px solid;
-  .item-hangout {
-    border-radius: 16px;
-    padding-left: 24px;
-    width: 240px;
-    height: 30px;
-    position: relative;
-    &:hover {
-      background-color: rgba(60, 64, 67, 0.18);
+  .meeting {
+    margin-top: 6px;
+    padding-top: 10px;
+    border-top: #e7e8e9 2px solid;
+    .item-meeting {
+      border-radius: 16px;
+      padding-left: 24px;
+      width: 240px;
+      height: 30px;
     }
-    .iconfont-user {
-      background-image: url("../imgs/user.png");
+  }
+  .hangouts {
+    margin-top: 6px;
+    padding-bottom: 8px;
+    padding-top: 10px;
+    border-top: #e7e8e9 2px solid;
+    border-bottom: #e7e8e9 2px solid;
+    .item-hangout {
+      border-radius: 16px;
+      padding-left: 24px;
+      width: 240px;
+      height: 30px;
       position: relative;
-      font-size: 18px;
-      height: 28px;
-      width: 28px;
-      line-height: 28px;
-      text-align: center;
-      margin-right: 18px;
-      opacity: 0.54;
-      float: left;
-      cursor: pointer;
-      border-radius: 50%;
       &:hover {
         background-color: rgba(60, 64, 67, 0.18);
       }
-      .green {
-        background: #146b03;
-        display: block;
-        width: 10px;
-        height: 10px;
-        position: absolute;
+      .iconfont-user {
+        background-image: url("../imgs/user.png");
+        position: relative;
+        font-size: 18px;
+        height: 28px;
+        width: 28px;
+        line-height: 28px;
+        text-align: center;
+        margin-right: 18px;
+        opacity: 0.54;
+        float: left;
+        cursor: pointer;
         border-radius: 50%;
-        bottom: 0px;
-        right: 0px;
+        &:hover {
+          background-color: rgba(60, 64, 67, 0.18);
+        }
+        .green {
+          background: #146b03;
+          display: block;
+          width: 10px;
+          height: 10px;
+          position: absolute;
+          border-radius: 50%;
+          bottom: 0px;
+          right: 0px;
+        }
+      }
+      a {
+        text-decoration: none;
+        display: inline-block;
+        margin-top: 3px;
+        span {
+          font-size: 14px;
+          color: #202124;
+        }
+      }
+      .icon-xiala {
+        position: absolute;
+        top: 8px;
+        left: 105px;
+        color: rgba(60, 64, 67, 0.48);
+        font-size: 12px;
+      }
+      .icon-jia {
+        position: absolute;
+        top: 5px;
+        right: 20px;
+        color: rgba(60, 64, 67, 0.68);
       }
     }
-    a {
+  }
+  .chat-list {
+    font-size: 13px;
+    text-align: center;
+    .logo-chat {
+      background: no-repeat url("../imgs/chat-logo.png") -649px -108px;
+      width: 72px;
+      height: 72px;
+      margin: 18px auto 20px;
+    }
+    .newchat {
+      color: #1155cc;
       text-decoration: none;
-      display: inline-block;
-      margin-top: 3px;
-      span {
-        font-size: 14px;
-        color: #202124;
+    }
+  }
+  .footer-list {
+    margin-top: 50px;
+    padding-top: 4px;
+    border-top: 2px solid #e7e8e9;
+    text-align: center;
+    .iconfont {
+      font-size: 22px;
+      opacity: 0.54;
+      margin: 0 6px;
+      cursor: pointer;
+    }
+  }
+}
+.right-aside {
+  position: absolute;
+  top: 0px;
+  right: 0;
+  width: 56px;
+  min-width: 56px;
+  height: 680px;
+  border-left: 2px #eaeaec solid;
+  .list {
+    width: 100%;
+    height: 98%;
+    position: relative;
+    .item {
+      cursor: pointer;
+      height: 56px;
+      outline: none;
+      pointer-events: none;
+      position: relative;
+      -webkit-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      width: 56px;
+      text-align: center;
+      .img {
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 20px 20px;
+        border-radius: 50%;
+        height: 40px;
+        pointer-events: auto;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        width: 40px;
+        margin: 8px;
+        line-height: 40px;
+        &:hover {
+          background-color: rgba(60, 64, 67, 0.08);
+        }
+      }
+      .cal {
+        background-image: url("../imgs/calendar.png");
+      }
+      .keep {
+        background-image: url("../imgs/keep.png");
+      }
+      .task {
+        background-image: url("../imgs/tasks2_2x.png");
+      }
+      .contact {
+        background-image: url("../imgs/contacts_2x.png");
+      }
+      i {
+        display: block;
+        margin: 12px auto;
+        width: 30px;
+        height: 1px;
+        background-color: rgba(202, 200, 200, 0.6);
       }
     }
-    .icon-xiala {
+    .item-foot {
+      bottom: 0;
       position: absolute;
-      top: 8px;
-      left: 105px;
-      color: rgba(60, 64, 67, 0.48);
-      font-size: 12px;
-    }
-    .icon-jia {
-      position: absolute;
-      top: 5px;
-      right: 20px;
-      color: rgba(60, 64, 67, 0.68);
     }
   }
 }
