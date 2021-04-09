@@ -62,6 +62,7 @@ h6 {
 }
 
 .header .header-left .logo {
+  cursor: pointer;
   float: left;
 }
 
@@ -194,18 +195,21 @@ h6 {
 .main {
   width: 100%;
   position: relative;
+  z-index: 1;
 }
 
 .main .content {
-  width: 1392px;
+  width: 1377px;
   margin-left: 72px;
   min-height: 1px;
   float: left;
-  border-bottom: 1px solid #e7e8e9;
+  position: relative;
+  z-index: 1;
 }
 
 .main .content .head-list {
   height: 48px;
+  border-bottom: 1px solid #e7e8e9;
 }
 
 .main .content .head-list .checkbox {
@@ -265,6 +269,90 @@ h6 {
   font-size: 23px;
 }
 
+.main .content .mail-list {
+  height: 58px;
+  line-height: 58px;
+  border-bottom: 1px solid #e7e8e9;
+}
+
+.main .content .mail-list .head .icon-xiala1 {
+  margin-left: -20px;
+  font-size: 12px;
+  font-weight: bold;
+  opacity: 0.56;
+}
+
+.main .content .mail-list .head i {
+  margin-left: 20px;
+  font-style: normal;
+  font-size: 18px;
+}
+
+.main .content .mail-list .head .icon-gengduo {
+  float: right;
+  margin-right: 20px;
+  font-size: 18px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.main .content .mail-list .head .icon-gengduo:hover {
+  color: #f37004;
+}
+
+.main .content .else .head .icon-xiala1 {
+  margin-left: 43px;
+}
+
+.main .content .footer {
+  vertical-align: bottom;
+  background: none !important;
+  margin: 20px 0 16px;
+  padding: 0 16px;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.main .content .footer .left {
+  width: 33.3%;
+  text-align: left;
+}
+
+.main .content .footer .left a {
+  border-radius: 2px;
+  display: block;
+  border-top: 6px #dadce0 solid;
+  padding-top: 7px;
+  text-decoration: none;
+  width: 220px;
+  color: #5f6368;
+  font-size: 13px;
+}
+
+.main .content .footer .left a span {
+  margin-left: 6px;
+}
+
+.main .content .footer .middle,
+.main .content .footer .right {
+  width: 33.3%;
+  text-align: left;
+  font-size: 13px;
+  color: #5f6368;
+}
+
+.main .content .footer .middle a,
+.main .content .footer .right a {
+  color: #5f6368;
+  text-decoration: none;
+}
+
+.main .content .footer .right {
+  text-align: right;
+}
+
 .left-aside {
   background-color: white;
   position: fixed;
@@ -279,6 +367,7 @@ h6 {
 
 .left-aside .logo-write {
   /* 98*46 */
+  cursor: pointer;
   position: relative;
   color: #3c4043;
   margin: 16px 0;
@@ -559,4 +648,353 @@ h6 {
 .right-aside .list .item-foot {
   bottom: 0;
   position: absolute;
+}
+
+.new-mail {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 1000000;
+  width: 579px;
+  min-height: 367px;
+  box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2);
+}
+
+.new-mail header {
+  height: 40px;
+  border-radius: 8px 8px 0 0;
+  background: #404040;
+  color: #fcfbfb;
+  text-align: center;
+}
+
+.new-mail header span {
+  float: left;
+  line-height: 40px;
+  margin-left: 14px;
+}
+
+.new-mail header i {
+  float: right;
+  font-size: 20px;
+  line-height: 40px;
+  width: 40px;
+  margin-top: 4px;
+}
+
+.new-mail header i:hover {
+  background-color: rgba(252, 251, 251, 0.4);
+}
+
+.new-mail form .box {
+  background-color: white;
+  position: relative;
+  min-width: 546px;
+}
+
+.new-mail form .box input {
+  outline: none;
+  border: none;
+  width: 94%;
+  height: 20px;
+  margin: 0 16px;
+  padding: 8px 0;
+  font-size: 18px;
+  border-bottom: 1px solid #cccaca;
+  text-indent: 6px;
+}
+
+.new-mail form .box i {
+  position: absolute;
+  top: 11px;
+  font-style: normal;
+  cursor: pointer;
+}
+
+.new-mail form .box i:first-of-type {
+  right: 66px;
+}
+
+.new-mail form .box i:last-of-type {
+  right: 21px;
+}
+
+.new-mail form .bottom {
+  position: relative;
+  background-color: white;
+  display: flex;
+  height: 32px;
+  width: 100%;
+  padding: 12px 0 16px;
+  text-align: center;
+}
+
+.new-mail form .bottom .text-menu {
+  position: absolute;
+  top: -36px;
+  left: 48px;
+  width: 478px;
+  height: 20px;
+  border-radius: 2px;
+  background-color: #fff;
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+  margin: 0;
+  padding: 8px 2px;
+  white-space: nowrap;
+}
+
+.new-mail form .bottom .text-menu .xia-la {
+  background-image: url("../imgs/arrow_drop_down_black_20dp.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 20px;
+  display: block;
+  border: none;
+  height: 20px;
+  margin: 0 0 0 auto;
+  opacity: 0.7;
+  width: 16px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.new-mail form .bottom .text-menu .font-famliy {
+  float: left;
+  position: relative;
+  width: 97px;
+  border-radius: 2px;
+  cursor: pointer;
+  border-right: 2px solid rgba(60, 64, 67, 0.18);
+  padding-right: 8px;
+}
+
+.new-mail form .bottom .text-menu .font-famliy:hover {
+  background-color: rgba(60, 64, 67, 0.08);
+}
+
+.new-mail form .bottom .text-menu .font-famliy span {
+  display: block;
+  overflow: hidden;
+  padding: 0 0 0 4px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 4.8125rem;
+  opacity: 0.7;
+  width: 4.8125rem;
+}
+
+.new-mail form .bottom .text-menu .font-size {
+  float: left;
+  position: relative;
+  width: 40px;
+  border-radius: 2px;
+  cursor: pointer;
+  border-right: 2px solid rgba(60, 64, 67, 0.18);
+  padding-right: 8px;
+}
+
+.new-mail form .bottom .text-menu .font-size:hover {
+  background-color: rgba(60, 64, 67, 0.08);
+  opacity: 0.8;
+}
+
+.new-mail form .bottom .text-menu .font-size div {
+  height: 20px;
+  width: 20px;
+  margin-left: 10px;
+  background-image: url("../imgs/format_size_black_20dp.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 20px;
+  opacity: 0.55;
+}
+
+.new-mail form .bottom .text-menu .func {
+  position: relative;
+  float: left;
+  border-radius: 2px;
+  padding: 0;
+  height: 20px;
+  width: 20px;
+  color: #444;
+  line-height: 20px;
+  list-style: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 20px;
+  opacity: 0.55;
+  margin-left: 8px;
+}
+
+.new-mail form .bottom .text-menu .func:hover {
+  background-color: rgba(60, 64, 67, 0.08);
+  opacity: 0.8;
+}
+
+.new-mail form .bottom .text-menu .func:nth-of-type(1) {
+  background-image: url("../imgs/left.png");
+}
+
+.new-mail form .bottom .text-menu .func:nth-of-type(2) {
+  background-image: url("../imgs/right.png");
+  border-right: 2px solid rgba(60, 64, 67, 0.38);
+  padding-right: 8px;
+}
+
+.new-mail form .bottom .text-menu .func-3 {
+  background-image: url("../imgs/format_bold_black_20dp.png");
+}
+
+.new-mail form .bottom .text-menu .func-4 {
+  background-image: url("../imgs/format_italic_black_20dp.png");
+}
+
+.new-mail form .bottom .text-menu .func-5 {
+  background-image: url("../imgs/format_underlined_black_20dp.png");
+}
+
+.new-mail form .bottom .text-menu .func-6 {
+  background-image: url("../imgs/text_format_black_20dp.png");
+  position: relative;
+  width: 40px;
+  border-right: 2px solid rgba(60, 64, 67, 0.38);
+  margin-left: 0;
+}
+
+.new-mail form .bottom .text-menu .func-7 {
+  background-image: url("../imgs/format_align_left_black_20dp.png");
+  position: relative;
+  width: 40px;
+  margin-left: 0;
+}
+
+.new-mail form .bottom .text-menu .func-8 {
+  background-image: url("../imgs/format_list_numbered_black_20dp.png");
+  margin-left: 6px;
+  padding-right: 21px;
+  border-right: 2px solid rgba(60, 64, 67, 0.38);
+}
+
+.new-mail form .bottom .send {
+  float: left;
+  line-height: 36px;
+  width: 72px;
+  height: 36px;
+  outline: none;
+  background-color: #1a73e8;
+  color: #fff;
+  border: none;
+  margin-left: 10px;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 0;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 0;
+}
+
+.new-mail form .bottom .send:hover {
+  box-shadow: 0 1px 2px 0 rgba(26, 115, 232, 0.451), 0 1px 3px 1px rgba(26, 115, 232, 0.302);
+  background-color: #297be6;
+  outline: 1px solid transparent;
+}
+
+.new-mail form .bottom .xiala {
+  float: left;
+  line-height: 36px;
+  width: 20px;
+  height: 36px;
+  outline: none;
+  background-color: #1a73e8;
+  color: #fff;
+  border: none;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 4px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 4px;
+  border-left: 1px solid #333;
+}
+
+.new-mail form .bottom .xiala:hover {
+  box-shadow: 0 1px 2px 0 rgba(26, 115, 232, 0.451), 0 1px 3px 1px rgba(26, 115, 232, 0.302);
+  background-color: #297be6;
+  outline: 1px solid transparent;
+}
+
+.new-mail form .bottom .xiala i {
+  padding-left: 1px;
+  display: inline-block;
+  height: 36px;
+  font-size: 0.5px;
+}
+
+.new-mail form .bottom .btn-group {
+  width: 468px;
+}
+
+.new-mail form .bottom .btn {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 20px;
+  float: left;
+  height: 24px;
+  margin: 2px 2px;
+  width: 24px;
+  padding: 4px;
+  opacity: 0.7;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.new-mail form .bottom .btn:hover {
+  background-color: rgba(202, 200, 200, 0.6);
+}
+
+.new-mail form .bottom .btn-right {
+  float: right;
+}
+
+.new-mail form .bottom .btn:nth-of-type(1) {
+  background-image: url("../imgs/text_format_black_20dp.png");
+  margin-left: 8px;
+}
+
+.new-mail form .bottom .btn:nth-of-type(2) {
+  background-image: url("../imgs/attach_file_black_20dp.png");
+}
+
+.new-mail form .bottom .btn:nth-of-type(3) {
+  background-image: url("../imgs/insert_link_black_20dp.png");
+}
+
+.new-mail form .bottom .btn:nth-of-type(4) {
+  background-image: url("../imgs/insert_emoticon_black_20dp.png");
+}
+
+.new-mail form .bottom .btn:nth-of-type(5) {
+  background-image: url("../imgs/drive_black_20dp.png");
+  margin-left: 8px;
+}
+
+.new-mail form .bottom .btn:nth-of-type(6) {
+  background-image: url("../imgs/insert_photo_black_20dp.png");
+}
+
+.new-mail form .bottom .btn:nth-of-type(7) {
+  background-image: url("../imgs/lock_clock_black_20dp.png");
+}
+
+.new-mail form .bottom .btn:nth-of-type(8) {
+  background-image: url("../imgs/ink_pen_black_20dp.png");
+}
+
+.new-mail form .bottom .btn:nth-of-type(9) {
+  background-image: url("../imgs/delete_black_20dp.png");
+}
+
+.new-mail form .bottom .btn:nth-of-type(10) {
+  background-image: url("../imgs/more_vert_black_20dp.png");
 }

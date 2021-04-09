@@ -28,10 +28,7 @@
         <div class="iconfont icon-yingyongzonglan"></div>
         <div class="user-logo">
           <a href="#">
-            <img
-              src="https://lh3.googleusercontent.com/ogw/ADGmqu_ZrvwHvFfPuqtkKQ9p6VE1on29EIYKJiYyt6uM=s32-c-mo"
-              alt=""
-            />
+            <img src="./libs/imgs/name.png" alt="" />
           </a>
         </div>
       </div>
@@ -116,6 +113,108 @@
             <span class="iconfont icon-zuo"></span>
             <span class="iconfont icon-you"></span>
           </div>
+        </div>
+        <div class="mail-list">
+          <div class="head">
+            <span class="iconfont icon-xiala1"></span>
+            <i>未读</i>
+            <span class="iconfont icon-gengduo"></span>
+          </div>
+        </div>
+        <div class="mail-list else">
+          <div class="head">
+            <span class="iconfont icon-xiala1"></span>
+            <i>其他邮件</i>
+            <span class="iconfont icon-gengduo"></span>
+          </div>
+        </div>
+
+        <div class="footer">
+          <div class="left">
+            <a href="#">
+              <div>
+                已使用1GB，共15GB<span class="iconfont icon-shangchuan"></span>
+              </div>
+            </a>
+          </div>
+          <div class="middle">
+            <a href="#">条款</a> · <a href="#">隐私权</a> ·
+            <a href="#">使用规定</a>
+          </div>
+          <div class="right">
+            <div>上次帐号活动时间：7小时前</div>
+            <span>详细信息</span>
+          </div>
+        </div>
+        <div class="new-mail" id="new-mail" style="display: block">
+          <header>
+            <span>新邮件</span>
+            <i class="iconfont icon-cross" id="mail-close"></i>
+            <i class="iconfont icon-window-normal" id="resize-window"></i>
+            <i class="iconfont icon-zuixiaohua"></i>
+          </header>
+          <form>
+            <div class="box">
+              <input type="text" placeholder="收件人" />
+              <i>抄送</i>
+              <i>密送</i>
+            </div>
+            <div class="box">
+              <input type="text" placeholder="主题" />
+            </div>
+            <div
+              class="textarea"
+              id="textarea"
+              contenteditable="true"
+              style="
+                background-color: white;
+                outline: none;
+                padding: 10px 10px;
+                min-height: 173px;
+              "
+            ></div>
+            <div class="bottom">
+              <div class="text-menu" id="text-menu" style="display: none">
+                <div class="func"></div>
+                <div class="func"></div>
+                <div class="font-famliy">
+                  <span>Trebuchet MS</span>
+                  <i class="xia-la"></i>
+                </div>
+                <div class="font-size" id="fontSize">
+                  <div></div>
+                  <i class="xia-la"></i>
+                </div>
+                <div class="func func-3"></div>
+                <div class="func func-4"></div>
+                <div class="func func-5"></div>
+                <div class="func func-6" id="font-color">
+                  <i class="xia-la"></i>
+                </div>
+                <div class="func func-7"><i class="xia-la"></i></div>
+                <div class="func func-8"></div>
+                <div class="func"><i class="xia-la"></i></div>
+              </div>
+              <div class="send">
+                <span>发送</span>
+              </div>
+              <div class="xiala">
+                <i class="iconfont icon-xiala"></i>
+              </div>
+              <div class="btn-group" id="btn-group">
+                <div class="btn" id="textMenu-open"></div>
+                <div class="btn"></div>
+                <div class="btn"></div>
+                <div class="btn"></div>
+                <div class="btn"></div>
+                <div class="btn"></div>
+                <div class="btn"></div>
+                <div class="btn"></div>
+                <div class="btn btn-right"></div>
+                <div class="btn btn-right"></div>
+              </div>
+            </div>
+          </form>
         </div>
       </div>
       <div class="right-aside">
