@@ -25,6 +25,47 @@ h6 {
   color: #333;
 }
 
+.tip {
+  display: none;
+  font-size: 17px;
+  font-weight: 500;
+  text-align: center;
+  color: #fff;
+  height: 24px;
+  min-width: 46px;
+  margin: 0 6px;
+  line-height: 24px;
+  border-radius: 3px;
+  position: absolute;
+  top: -30px;
+  left: -12px;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.tip-2 {
+  min-width: 46px;
+}
+
+.tip-3 {
+  left: -30px;
+  min-width: 72px;
+}
+
+.tip-4 {
+  left: -36px;
+  min-width: 88px;
+}
+
+.tip-5 {
+  left: -40px;
+  min-width: 100px;
+}
+
+#resize-window,
+#mail-close {
+  position: relative;
+}
+
 .header {
   font: 13px/27px Roboto, RobotoDraft, Arial, sans-serif;
   z-index: 986;
@@ -270,7 +311,11 @@ h6 {
 }
 
 .main .content .mail-list {
-  height: 58px;
+  min-height: 58px;
+  border-bottom: 1px solid #e7e8e9;
+}
+
+.main .content .mail-list .head {
   line-height: 58px;
   border-bottom: 1px solid #e7e8e9;
 }
@@ -280,6 +325,7 @@ h6 {
   font-size: 12px;
   font-weight: bold;
   opacity: 0.56;
+  cursor: pointer;
 }
 
 .main .content .mail-list .head i {
@@ -454,6 +500,10 @@ h6 {
 .left-aside .top-list .item a span {
   font-size: 14px;
   color: #202124;
+}
+
+.left-aside .top-list .item-active {
+  background-color: rgba(248, 80, 2, 0.28);
 }
 
 .left-aside .meeting {
@@ -652,8 +702,8 @@ h6 {
 
 .new-mail {
   position: absolute;
-  top: 0px;
-  left: 0px;
+  top: 100px;
+  left: 100px;
   z-index: 1000000;
   width: 579px;
   min-height: 367px;
@@ -936,6 +986,7 @@ h6 {
 }
 
 .new-mail form .bottom .btn {
+  position: relative;
   background-position: center;
   background-repeat: no-repeat;
   background-size: 20px;
@@ -997,4 +1048,146 @@ h6 {
 
 .new-mail form .bottom .btn:nth-of-type(10) {
   background-image: url("../imgs/more_vert_black_20dp.png");
+}
+
+.mail-body {
+  display: none;
+  width: 100%;
+  min-height: 0px;
+  border-spacing: 0;
+  padding: 0;
+  border-collapse: collapse;
+}
+
+.mail-body tr {
+  box-shadow: inset 0 -1px 0 0 rgba(100, 121, 143, 0.122);
+  display: flex;
+  position: relative;
+  color: #202124;
+  background: rgba(255, 255, 255, 0.902);
+  cursor: pointer;
+}
+
+.mail-body tr:hover {
+  box-shadow: inset 1px 0 0 #dadce0, inset -1px 0 0 #dadce0, 0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+  z-index: 1;
+}
+
+.mail-body tr .checkmail {
+  font-size: 21px;
+  line-height: 40px;
+  opacity: 0.4;
+  order: 0;
+  padding: 0 10px 0 10px;
+  margin: 2px 4px 0 13px;
+  position: relative;
+  width: 20px;
+  border-radius: 14px;
+}
+
+.mail-body tr .checkmail:hover {
+  background-color: rgba(60, 64, 67, 0.18);
+  opacity: 1;
+}
+
+.mail-body tr .xing {
+  float: left;
+  width: 20px;
+  height: 40px;
+  opacity: 0.4;
+  line-height: 40px;
+  text-align: left;
+}
+
+.mail-body tr .xing span {
+  position: relative;
+  font-size: 20px;
+}
+
+.mail-body tr .xing:hover {
+  background-color: rgba(60, 64, 67, 0.18);
+  opacity: 1;
+}
+
+.mail-body tr .username {
+  margin-left: 10px;
+  min-width: 168px;
+  padding-left: 0;
+  padding-right: 32px;
+  line-height: 40px;
+  font-weight: 700;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.mail-body tr .detail {
+  max-width: 1002px;
+  height: auto;
+  min-width: 0;
+  padding-right: 10px;
+  line-height: 40px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.mail-body tr .date {
+  line-height: 40px;
+  margin-left: 10px;
+  padding-right: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.mail-body tr .handle {
+  display: none;
+  line-height: 40px;
+}
+
+.mail-body tr .handle ul {
+  display: flex;
+  margin-right: 6px;
+  padding: 0;
+}
+
+.mail-body tr .handle ul li {
+  border-radius: 4px;
+  height: 40px;
+  opacity: 0.54;
+  width: 20px;
+  align-items: center;
+  border: none;
+  display: inline-flex;
+  justify-content: center;
+  outline: none;
+  position: relative;
+  z-index: 0;
+  cursor: pointer;
+  list-style: none;
+  margin: 0 10px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 20px;
+}
+
+.mail-body tr .handle ul li:hover {
+  background-color: rgba(60, 64, 67, 0.3);
+}
+
+.mail-body tr .handle ul li:nth-of-type(1) {
+  background-image: url("../imgs/guidang.png");
+}
+
+.mail-body tr .handle ul li:nth-of-type(2) {
+  background-image: url("../imgs/shanchu.png");
+}
+
+.mail-body tr .handle ul li:nth-of-type(3) {
+  background-image: url("../imgs/yidu.png");
+}
+
+.mail-body tr .handle ul li:nth-of-type(4) {
+  background-image: url("../imgs/yanshi.png");
 }

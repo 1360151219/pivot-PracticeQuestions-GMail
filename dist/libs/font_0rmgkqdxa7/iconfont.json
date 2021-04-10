@@ -13,6 +13,13 @@
       "unicode_decimal": 58908
     },
     {
+      "icon_id": "480630",
+      "name": "星",
+      "font_class": "xing",
+      "unicode": "e698",
+      "unicode_decimal": 59032
+    },
+    {
       "icon_id": "736604",
       "name": "check-box-outline-blank",
       "font_class": "checkboxoutlineblank",
@@ -34,13 +41,6 @@
       "unicode_decimal": 58916
     },
     {
-      "icon_id": "1186194",
-      "name": "星",
-      "font_class": "iconfontxingxing",
-      "unicode": "e6b0",
-      "unicode_decimal": 59056
-    },
-    {
       "icon_id": "1221888",
       "name": "时钟 实心",
       "font_class": "solid-time",
@@ -60,6 +60,13 @@
       "font_class": "yifadan",
       "unicode": "e620",
       "unicode_decimal": 58912
+    },
+    {
+      "icon_id": "2155127",
+      "name": "星",
+      "font_class": "xing1",
+      "unicode": "e630",
+      "unicode_decimal": 58928
     },
     {
       "icon_id": "2570107",
@@ -198,8 +205,8 @@
       "icon_id": "16589927",
       "name": "菜单---",
       "font_class": "85caidan---",
-      "unicode": "e630",
-      "unicode_decimal": 58928
+      "unicode": "e631",
+      "unicode_decimal": 58929
     },
     {
       "icon_id": "18170429",
