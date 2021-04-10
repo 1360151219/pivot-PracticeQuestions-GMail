@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./libs/font_0rmgkqdxa7/iconfont.css" />
+    <link rel="stylesheet" href="./libs/css/index.min.css" />
+  </head>
+  <body>
+    <div class="header">
+      <div class="header-left">
+        <div class="iconfont icon-85caidan---"></div>
+        <div class="logo">
+          <a href="#"><img src="./libs/imgs/logo.png" alt="" /></a>
+        </div>
+      </div>
+      <div class="header-search">
+        <div class="iconfont icon-sousuo sousuo"></div>
+        <input type="text" placeholder="搜索文件" />
+        <div class="iconfont icon-cross cha"></div>
+        <div class="iconfont icon-xiala1 xiala"></div>
+      </div>
+      <div class="header-right">
+        <div class="iconfont icon-wenhao"></div>
+        <div class="iconfont icon-shezhi"></div>
+        <div class="iconfont icon-yingyongzonglan"></div>
+        <div class="user-logo">
+          <a href="#">
+            <img src="./libs/imgs/name.png" alt="" />
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="main">
+      <div class="left-aside" id="left-aside">
+        <div class="logo-write" id="logo-write"></div>
+        <div class="top-list">
+          <div class="item item-active" id="inbox">
+            <div class="iconfont icon-shoujianxiang"></div>
+            <a href="#"><span>收件箱</span></a>
+          </div>
+          <div class="item" id="go-xing">
+            <div class="iconfont icon-xing"></div>
+            <a href="#"><span>已加星标</span></a>
+          </div>
+          <div class="item" id="time-out">
+            <div class="iconfont icon-solid-time"></div>
+            <a href="#"><span>已延后</span></a>
+          </div>
+          <div class="item">
+            <div class="iconfont icon-yifadan"></div>
+            <a href="#"><span>已发邮件</span></a>
+          </div>
+          <div class="item">
+            <div
+              class="iconfont icon-gerenyouxiang_cebianlan_caogaoxiang"
+            ></div>
+            <a href="#"><span>草稿</span></a>
+          </div>
+
+          <div class="item">
+            <div class="iconfont icon-xiala1"></div>
+            <a href="#"><span>显示更多标签</span></a>
+          </div>
+        </div>
+        <div class="meeting top-list">
+          <div class="item-meeting" id="item-meeting">
+            <!-- <span>会议</span> -->
+          </div>
+          <div class="item">
+            <div class="iconfont icon-7sheying"></div>
+            <a href="#"><span>发起新会议</span></a>
+          </div>
+          <div class="item">
+            <div class="iconfont icon-jianpan-tianchong"></div>
+            <a href="#"><span>加入会议</span></a>
+          </div>
+        </div>
+        <div class="hangouts top-list">
+          <div class="item-hangout" id="item-hangout">
+            <!-- <span>Hangouts</span> -->
+          </div>
+          <div class="item-hangout">
+            <div class="iconfont-user"><div class="green"></div></div>
+            <a href="#"><span>憬禧</span></a>
+            <div class="iconfont icon-xiala"></div>
+            <div class="iconfont icon-jia"></div>
+          </div>
+        </div>
+        <div class="chat-list">
+          <div class="logo-chat"></div>
+          <div>近期没有聊天</div>
+          <a class="newchat" href="#">发起新的聊天</a>
+        </div>
+        <div class="footer-list" id="footer-list" style="display: none">
+          <span class="iconfont icon-lianxiren1"></span>
+          <span class="iconfont icon-liaotian"></span>
+        </div>
+      </div>
+      <div class="content">
+        <div class="head-list">
+          <div class="checkbox">
+            <span
+              class="iconfont icon-checkboxoutlineblank"
+              id="check-all"
+            ></span>
+            <span class="iconfont icon-xiala1"></span>
+          </div>
+          <div class="more" id="more">
+            <span class="iconfont icon-shuaxin"></span>
+            <span class="iconfont icon-gengduo"></span>
+          </div>
+          <div class="checkall-menu" id="checkall-menu" style="display: none">
+            <div class="left">
+              <div class="CML CML-1"></div>
+              <div class="CML CML-2"></div>
+              <div class="CML CML-3"></div>
+              <div class="border-right"></div>
+            </div>
+            <div class="middle">
+              <div class="CMM CMM-1"></div>
+              <div class="CMM CMM-2">
+                <div class="tip tip-2 tip-b">延后</div>
+              </div>
+              <div class="CMM CMM-3"></div>
+              <div class="border-right"></div>
+            </div>
+            <div class="right-r">
+              <div class="CMR CMR-1"></div>
+              <div class="CMR CMR-2"></div>
+              <div class="CMR CMR-3"></div>
+            </div>
+          </div>
+          <div class="right">
+            <span class="iconfont icon-zuo"></span>
+            <span class="iconfont icon-you"></span>
+          </div>
+        </div>
+        <div id="root"></div>
+
+        <div class="footer">
+          <div class="left">
+            <a href="#">
+              <div>
+                已使用1GB，共15GB<span class="iconfont icon-shangchuan"></span>
+              </div>
+            </a>
+          </div>
+          <div class="middle">
+            <a href="#">条款</a> · <a href="#">隐私权</a> ·
+            <a href="#">使用规定</a>
+          </div>
+          <div class="right">
+            <div>上次帐号活动时间：7小时前</div>
+            <span>详细信息</span>
+          </div>
+        </div>
+        <div class="new-mail" id="new-mail" style="display: none">
+          <header>
+            <span>新邮件</span>
+            <i class="iconfont icon-cross" id="mail-close"
+              ><div class="tip tip-2">关闭</div></i
+            >
+            <i class="iconfont icon-window-normal" id="resize-window"
+              ><div class="tip tip-2">缩放</div></i
+            >
+            <i class="iconfont icon-zuixiaohua"></i>
+          </header>
+          <form>
+            <div class="box">
+              <input type="text" placeholder="收件人" />
+              <i>抄送</i>
+              <i>密送</i>
+            </div>
+            <div class="box">
+              <input type="text" placeholder="主题" />
+            </div>
+            <div
+              class="textarea"
+              id="textarea"
+              contenteditable="true"
+              style="
+                background-color: white;
+                outline: none;
+                padding: 10px 10px;
+                min-height: 173px;
+              "
+            ></div>
+            <div class="bottom">
+              <div class="text-menu" id="text-menu" style="display: none">
+                <div class="func"></div>
+                <div class="func"></div>
+                <div class="font-famliy">
+                  <span>Trebuchet MS</span>
+                  <i class="xia-la"></i>
+                </div>
+                <div class="font-size" id="fontSize">
+                  <div></div>
+                  <i class="xia-la"></i>
+                  <div class="tip tip-4">字体大小</div>
+                </div>
+                <div class="func func-3"></div>
+                <div class="func func-4"></div>
+                <div class="func func-5"></div>
+                <div class="func func-6" id="font-color">
+                  <div class="tip tip-4">字体颜色</div>
+                  <i class="xia-la"></i>
+                </div>
+                <div class="func func-7"><i class="xia-la"></i></div>
+                <div class="func func-8"></div>
+                <div class="func"><i class="xia-la"></i></div>
+              </div>
+              <div class="send">
+                <span>发送</span>
+              </div>
+              <div class="xiala">
+                <i class="iconfont icon-xiala"></i>
+              </div>
+              <div class="btn-group" id="btn-group">
+                <div class="btn" id="textMenu-open">
+                  <div class="tip tip-5">字体格式化</div>
+                </div>
+                <div class="btn" id="text-save">
+                  <div class="tip tip-2">保存</div>
+                </div>
+                <div class="btn"></div>
+                <div class="btn"></div>
+                <div class="btn"></div>
+                <div class="btn"></div>
+                <div class="btn"></div>
+                <div class="btn"></div>
+                <div class="btn btn-right"></div>
+                <div class="btn btn-right"></div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="right-aside">
+        <div class="list">
+          <div class="item">
+            <a href="#">
+              <div class="img cal"></div>
+            </a>
+          </div>
+          <div class="item">
+            <a href="#">
+              <div class="img keep"></div>
+            </a>
+          </div>
+          <div class="item">
+            <a href="#">
+              <div class="img task"></div>
+            </a>
+          </div>
+          <div class="item">
+            <a href="#">
+              <div class="img contact"></div>
+              <i></i>
+            </a>
+          </div>
+          <div class="item">
+            <a href="#">
+              <div class="iconfont icon-jia img"></div>
+            </a>
+          </div>
+          <div class="item item-foot">
+            <a href="#">
+              <div class="iconfont icon-you img"></div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./libs/js/index.js"></script>
+  </body>
+</html>
