@@ -23,7 +23,11 @@ h6 {
 html,
 body {
 }
+.show {
+  display: block !important;
+}
 .tip {
+  z-index: 100;
   display: none;
   font-size: 17px;
   font-weight: 500;
@@ -38,6 +42,10 @@ body {
   top: -30px;
   left: -12px;
   background-color: rgba(0, 0, 0, 0.7);
+}
+.tip-b {
+  top: 30px;
+  left: -12px;
 }
 .tip-2 {
   min-width: 46px;
@@ -258,14 +266,78 @@ body {
           }
         }
       }
+      .checkall-menu {
+        .left,
+        .middle,
+        .right-r {
+          display: inline-block;
+          .CML,
+          .CMM,
+          .CMR {
+            cursor: pointer;
+            position: relative;
+            display: inline-block;
+            height: 20px;
+            width: 20px;
+            margin: 7px 4px;
+            padding: 6px;
+            opacity: 0.54;
+            border-radius: 50%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 20px;
+            transition: opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+            &:hover {
+              opacity: 0.8;
+              background-color: rgba(0, 0, 0, 0.22);
+            }
+          }
+          .CML-1 {
+            margin-left: 12px;
+            background-image: url("../imgs/guidang.png");
+          }
+          .CML-2 {
+            background-image: url("../imgs/weixian.png");
+          }
+          .CML-3 {
+            background-image: url("../imgs/shanchu.png");
+          }
+          .CMM-1 {
+            background-image: url("../imgs/yidu.png");
+          }
+          .CMM-2 {
+            background-image: url("../imgs/yanshi.png");
+          }
+          .CMM-3 {
+            background-image: url("../imgs/task_add_filled_20_black_1x.png");
+          }
+          .CMR-1 {
+            background-image: url("../imgs/yizhi.png");
+          }
+          .CMR-2 {
+            background-image: url("../imgs/biaoqian.png");
+          }
+          .CMR-3 {
+            background-image: url("../imgs/more_vert_black_20dp.png");
+          }
+          .border-right {
+            width: 1px;
+            height: 20px;
+            background-color: rgba(0, 0, 0, 0.14);
+            display: inline-block;
+            margin-bottom: 12px;
+          }
+        }
+      }
       .right {
         position: relative;
         float: right;
+        display: inline-block;
         margin-right: 15px;
         margin-top: 12px;
         .icon-zuo {
           position: absolute;
-          top: -2px;
+          top: -1px;
           right: 30px;
           font-size: 23px;
         }
