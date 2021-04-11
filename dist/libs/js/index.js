@@ -196,7 +196,7 @@ const renderInbox = function () {
     <span class="iconfont icon-gengduo"></span>
   </div>
   <table class="mail-body">
-    <tbody id="non-read">
+    <tbody id="non-read" class="tbody">
       
     </tbody>
   </table>
@@ -208,7 +208,7 @@ const renderInbox = function () {
     <span class="iconfont icon-gengduo"></span>
   </div>
   <table class="mail-body" id="else-mail">
-    <tbody id="receive">
+    <tbody id="receive" class="tbody">
       
     </tbody>
   </table>
@@ -245,32 +245,7 @@ const renderInbox = function () {
       </ul>
     </td>
   </tr>
-  <tr class="mail-item">
-    <td
-      class="iconfont icon-checkboxoutlineblank checkmail"
-      name="checkmail"
-    ></td>
-    <td class="xing" name="add-xing">
-      <span class="iconfont icon-xing1"
-        ><div class="tip tip-3">加星标</div></span
-      >
-    </td>
-    <td class="username">Medium Daily Digest</td>
-    <td class="detail">
-      One is always on a strange road, watching strange scenery and
-      listening to strange music. Then one day, you will find that the
-      things you try hard to forget are already gone. 　
-    </td>
-    <td class="date">4月10号</td>
-    <td class="handle">
-      <ul>
-        <li name="rec-box"><div class="tip tip-5">移到收件箱</div></li>
-        <li></li>
-        <li name="weidu"><div class="tip tip-2">未读</div></li>
-        <li name="add-timeout"><div class="tip tip-2">延时</div></li>
-      </ul>
-    </td>
-  </tr>`;
+  `;
       once++;
     }
 
@@ -330,18 +305,18 @@ const Inbox = async function () {
     function mailFunc() {
       const mailBody = document.getElementsByClassName("mail-item");
       for (let i = 0; i < mailBody.length; i++) {
-        const details = mailBody[i].getElementsByClassName("detail");
-        const date = mailBody[i].getElementsByClassName("date");
-        const handle = mailBody[i].getElementsByClassName("handle");
+        let details = document.getElementsByClassName("detail");
+        let date = document.getElementsByClassName("date");
+        let handle = document.getElementsByClassName("handle");
         mailBody[i].onmouseenter = function () {
-          date[0].style.display = "none";
-          handle[0].style.display = "block";
-          details[0].style.width = "912px";
+          date[i].style.display = "none";
+          handle[i].style.display = "block";
+          details[i].style.width = "912px";
         };
         mailBody[i].onmouseleave = function () {
-          date[0].style.display = "block";
-          handle[0].style.display = "none";
-          details[0].style.width = "1002px";
+          date[i].style.display = "none";
+          handle[i].style.display = "block";
+          details[i].style.width = "912px";
         };
       }
     }
@@ -505,18 +480,18 @@ const Xing = function () {
   function mailFunc() {
     const mailBody = document.getElementsByClassName("mail-item");
     for (let i = 0; i < mailBody.length; i++) {
-      let details = mailBody[i].getElementsByClassName("detail");
-      let date = mailBody[i].getElementsByClassName("date");
-      let handle = mailBody[i].getElementsByClassName("handle");
+      let details = document.getElementsByClassName("detail");
+      let date = document.getElementsByClassName("date");
+      let handle = document.getElementsByClassName("handle");
       mailBody[i].onmouseenter = function () {
-        date[0].style.display = "none";
-        handle[0].style.display = "block";
-        details[0].style.width = "912px";
+        date[i].style.display = "none";
+        handle[i].style.display = "block";
+        details[i].style.width = "912px";
       };
       mailBody[i].onmouseleave = function () {
-        date[0].style.display = "none";
-        handle[0].style.display = "block";
-        details[0].style.width = "912px";
+        date[i].style.display = "none";
+        handle[i].style.display = "block";
+        details[i].style.width = "912px";
       };
     }
   }
@@ -641,20 +616,19 @@ const timeout = function () {
   // 单个邮件的移入移出
   function mailFunc() {
     const mailBody = document.getElementsByClassName("mail-item");
-
     for (let i = 0; i < mailBody.length; i++) {
-      const details = mailBody[i].getElementsByClassName("detail");
-      const date = mailBody[i].getElementsByClassName("date");
-      const handle = mailBody[i].getElementsByClassName("handle");
+      let details = document.getElementsByClassName("detail");
+      let date = document.getElementsByClassName("date");
+      let handle = document.getElementsByClassName("handle");
       mailBody[i].onmouseenter = function () {
-        date[0].style.display = "none";
-        handle[0].style.display = "block";
-        details[0].style.width = "912px";
+        date[i].style.display = "none";
+        handle[i].style.display = "block";
+        details[i].style.width = "912px";
       };
       mailBody[i].onmouseleave = function () {
-        date[0].style.display = "block";
-        handle[0].style.display = "none";
-        details[0].style.width = "1002px";
+        date[i].style.display = "none";
+        handle[i].style.display = "block";
+        details[i].style.width = "912px";
       };
     }
   }
