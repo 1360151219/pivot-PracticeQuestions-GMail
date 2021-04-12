@@ -245,6 +245,32 @@ const renderInbox = function () {
       </ul>
     </td>
   </tr>
+  <tr class="mail-item">
+    <td
+      class="iconfont icon-checkboxoutlineblank checkmail"
+      name="checkmail"
+    ></td>
+    <td class="xing" name="add-xing">
+      <span class="iconfont icon-xing1"
+        ><div class="tip tip-3">加星标</div></span
+      >
+    </td>
+    <td class="username">Medium Daily Digest</td>
+    <td class="detail">
+      One is always on a strange road, watching strange scenery and
+      listening to strange music. Then one day, you will find that the
+      things you try hard to forget are already gone. 　
+    </td>
+    <td class="date">4月10号</td>
+    <td class="handle">
+      <ul>
+        <li name="rec-box"><div class="tip tip-5">移到收件箱</div></li>
+        <li></li>
+        <li name="weidu"><div class="tip tip-2">未读</div></li>
+        <li name="add-timeout"><div class="tip tip-2">延时</div></li>
+      </ul>
+    </td>
+  </tr>
   `;
       once++;
     }
@@ -314,9 +340,9 @@ const Inbox = async function () {
           details[i].style.width = "912px";
         };
         mailBody[i].onmouseleave = function () {
-          date[i].style.display = "none";
-          handle[i].style.display = "block";
-          details[i].style.width = "912px";
+          date[i].style.display = "block";
+          handle[i].style.display = "none";
+          details[i].style.width = "1002px";
         };
       }
     }
@@ -464,6 +490,8 @@ const Inbox = async function () {
           let oneMail = addTimeout[i].parentNode.parentNode.parentNode;
 
           nodeTimeout.push(oneMail);
+          oneMail.onmouseenter = null;
+          oneMail.onmouseleave = null;
           oneMail.parentNode.removeChild(oneMail);
         };
       }
@@ -489,9 +517,9 @@ const Xing = function () {
         details[i].style.width = "912px";
       };
       mailBody[i].onmouseleave = function () {
-        date[i].style.display = "none";
-        handle[i].style.display = "block";
-        details[i].style.width = "912px";
+        date[i].style.display = "block";
+        handle[i].style.display = "none";
+        details[i].style.width = "1002px";
       };
     }
   }
@@ -626,9 +654,9 @@ const timeout = function () {
         details[i].style.width = "912px";
       };
       mailBody[i].onmouseleave = function () {
-        date[i].style.display = "none";
-        handle[i].style.display = "block";
-        details[i].style.width = "912px";
+        date[i].style.display = "block";
+        handle[i].style.display = "none";
+        details[i].style.width = "1002px";
       };
     }
   }
