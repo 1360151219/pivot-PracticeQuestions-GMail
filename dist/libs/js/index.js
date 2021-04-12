@@ -169,9 +169,9 @@ function _allDelay() {
   const allDelay = document.getElementById("all-delay");
   const addTimeout = document.getElementsByName("add-timeout");
   allDelay.onclick = function () {
-    addTimeout.forEach((element) => {
-      element.click();
-    });
+    for (let i = 0; i < addTimeout.length; i++) {
+      addTimeout[i].click();
+    }
   };
 } /* 全选移动到收件箱 */
 function _allInbox() {
@@ -214,12 +214,10 @@ const renderInbox = function () {
   </table>
 </div>
 `;
-  setTimeout(async function () {
-    /* 载入数据 */
-    const Receive = document.getElementById("receive");
-    /* 初始化 */
-    if (once == 1) {
-      Receive.innerHTML = `<tr class="mail-item">
+  /* 初始化 */
+  if (once == 1) {
+    const newNode = document.createElement("tr");
+    newNode.innerHTML = `
     <td
       class="iconfont icon-checkboxoutlineblank checkmail"
       name="checkmail"
@@ -244,89 +242,56 @@ const renderInbox = function () {
         <li name="add-timeout"><div class="tip tip-2">延时</div></li>
       </ul>
     </td>
-  </tr>
-  <tr class="mail-item">
-    <td
-      class="iconfont icon-checkboxoutlineblank checkmail"
-      name="checkmail"
-    ></td>
-    <td class="xing" name="add-xing">
-      <span class="iconfont icon-xing1"
-        ><div class="tip tip-3">加星标</div></span
-      >
-    </td>
-    <td class="username">Medium Daily Digest</td>
-    <td class="detail">
-      One is always on a strange road, watching strange scenery and
-      listening to strange music. Then one day, you will find that the
-      things you try hard to forget are already gone. 　
-    </td>
-    <td class="date">4月10号</td>
-    <td class="handle">
-      <ul>
-        <li name="rec-box"><div class="tip tip-5">移到收件箱</div></li>
-        <li></li>
-        <li name="weidu"><div class="tip tip-2">未读</div></li>
-        <li name="add-timeout"><div class="tip tip-2">延时</div></li>
-      </ul>
-    </td>
-  </tr>
-  `;
-      once++;
-    }
-
-    for (let i = 0; i < nodeBox.length; i++) {
-      Receive.appendChild(nodeBox[i]);
-    }
-  }, 1000);
-};
-
-/* 星标页的效果 */
-const renderXing = function () {
-  root.innerHTML = `<div class="mail-list not-read">
-  <table class="mail-body show">
-    <tbody id="star">
-      
-    </tbody>
-  </table>
-</div>`;
-  /* 载入数据 */
-  const star = document.getElementById("star");
-  for (let i = 0; i < nodeXing.length; i++) {
-    star.appendChild(nodeXing[i]);
-  }
-
-  goXing.setAttribute("class", "item item-active");
-  inBox.setAttribute("class", "item");
-  timeOut.setAttribute("class", "item");
-};
-/* 延时页的效果 */
-const rendertimeout = function () {
-  root.innerHTML = `<div class="mail-list not-read">
   
-  <table class="mail-body show">
-    <tbody id="delay-time">
-      
-    </tbody>
-  </table>
-</div>`;
-  /* 载入数据 */
-  const delayTime = document.getElementById("delay-time");
-  for (let i = 0; i < nodeTimeout.length; i++) {
-    delayTime.appendChild(nodeTimeout[i]);
+  
+  `;
+    newNode.setAttribute("class", "mail-item");
+    nodeBox.push(newNode);
+    const newNode2 = document.createElement("tr");
+    newNode2.innerHTML = `
+    <td
+      class="iconfont icon-checkboxoutlineblank checkmail"
+      name="checkmail"
+    ></td>
+    <td class="xing" name="add-xing">
+      <span class="iconfont icon-xing1"
+        ><div class="tip tip-3">加星标</div></span
+      >
+    </td>
+    <td class="username">Medium Daily Digest</td>
+    <td class="detail">
+    At the conclusion of the 31st World Championships in Nagoya,
+     Japan, at the invitation of the Chinese table tennis team, 
+     the U.S. table tennis team arrived on April 10, 1971, to commence 
+     
+    </td>
+    <td class="date">4月10号</td>
+    <td class="handle">
+      <ul>
+        <li name="rec-box"><div class="tip tip-5">移到收件箱</div></li>
+        <li></li>
+        <li name="weidu"><div class="tip tip-2">未读</div></li>
+        <li name="add-timeout"><div class="tip tip-2">延时</div></li>
+      </ul>
+    </td>
+  
+  
+  `;
+    newNode2.setAttribute("class", "mail-item");
+    nodeBox.push(newNode2);
+    once++;
   }
-  timeOut.setAttribute("class", "item item-active");
-  inBox.setAttribute("class", "item");
-  goXing.setAttribute("class", "item");
-};
-/* 加载页面 */
-const Inbox = async function () {
-  renderInbox();
+  /* 载入数据 */
+
+  const Receive = document.getElementById("receive");
+  for (let i = 0; i < nodeBox.length; i++) {
+    Receive.appendChild(nodeBox[i]);
+  }
   setTimeout(function () {
+    const weidus = document.getElementsByName("weidu");
     const tips = document.getElementsByClassName("tip");
     const listOPen = document.getElementById("list-open");
     const elseListOPen = document.getElementById("elseList-open");
-    const weidus = document.getElementsByName("weidu");
     // 单个邮件的移入移出
     function mailFunc() {
       const mailBody = document.getElementsByClassName("mail-item");
@@ -350,9 +315,7 @@ const Inbox = async function () {
         };
       }
     }
-
     mailFunc();
-
     /* tip的实现 */
     (function () {
       for (let i = 0; i < tips.length; i++) {
@@ -366,29 +329,41 @@ const Inbox = async function () {
         };
       }
     })();
-
+    /* 邮件从其他移入未读 */
+    (function () {
+      for (let i = 0; i < weidus.length; i++) {
+        weidus[i].onclick = function () {
+          let oneMail = weidus[i].parentNode.parentNode.parentNode;
+          nonRead.appendChild(oneMail);
+          this.innerHTML = `<div class="tip tip-2">已读</div>`;
+          mailFunc();
+        };
+      }
+    })();
     /* 未读和其他邮件的展开 */
     (function () {
       let temp_noneread = false;
       let temp_else = false;
-      listOPen.onclick = function () {
-        if (!temp_noneread) {
-          listOPen.parentNode.nextElementSibling.style.display = "block";
-          temp_noneread = true;
-        } else {
-          listOPen.parentNode.nextElementSibling.style.display = "none";
-          temp_noneread = false;
-        }
-      };
-      elseListOPen.onclick = function () {
-        if (!temp_else) {
-          elseListOPen.parentNode.nextElementSibling.style.display = "block";
-          temp_else = true;
-        } else {
-          elseListOPen.parentNode.nextElementSibling.style.display = "none";
-          temp_else = false;
-        }
-      };
+      if (listOPen && elseListOPen) {
+        listOPen.onclick = function () {
+          if (!temp_noneread) {
+            listOPen.parentNode.nextElementSibling.style.display = "block";
+            temp_noneread = true;
+          } else {
+            listOPen.parentNode.nextElementSibling.style.display = "none";
+            temp_noneread = false;
+          }
+        };
+        elseListOPen.onclick = function () {
+          if (!temp_else) {
+            elseListOPen.parentNode.nextElementSibling.style.display = "block";
+            temp_else = true;
+          } else {
+            elseListOPen.parentNode.nextElementSibling.style.display = "none";
+            temp_else = false;
+          }
+        };
+      }
     })();
     const nonRead = document.getElementById("non-read");
     const checkAll = document.getElementById("check-all");
@@ -458,51 +433,27 @@ const Inbox = async function () {
         };
       }
     })();
-    /* 邮件从其他移入未读 */
-    (function () {
-      for (let i = 0; i < weidus.length; i++) {
-        weidus[i].onclick = function () {
-          let oneMail = weidus[i].parentNode.parentNode.parentNode;
-          nonRead.appendChild(oneMail);
-          this.innerHTML = `<div class="tip tip-2">已读</div>`;
-          mailFunc();
-        };
-      }
-    })();
-
-    /* 制止传入收件箱页 */
-    const recBox = document.getElementsByName("rec-box");
-    for (let i = 0; i < recBox.length; i++) {
-      recBox[i].onclick = null;
-    }
-    /*邮件移动到星标页 */
-    (function () {
-      const addXing = document.getElementsByName("add-xing");
-      for (let i = 0; i < addXing.length; i++) {
-        addXing[i].onclick = function () {
-          let oneMail = addXing[i].parentNode;
-          nodeXing.push(oneMail);
-          oneMail.parentNode.removeChild(oneMail);
-        };
-      }
-    })();
-    /*邮件移动到延时页`*/
-    (function () {
-      const addTimeout = document.getElementsByName("add-timeout");
-      for (let i = 0; i < addTimeout.length; i++) {
-        addTimeout[i].onclick = function () {
-          let oneMail = addTimeout[i].parentNode.parentNode.parentNode;
-          nodeTimeout.push(oneMail);
-          oneMail.parentNode.removeChild(oneMail);
-        };
-      }
-    })();
   }, 1000);
 };
-const Xing = function () {
-  renderXing();
-  const listOPen = document.getElementById("list-open");
-  const weidus = document.getElementsByName("weidu");
+
+/* 星标页的效果 */
+const renderXing = function () {
+  root.innerHTML = `<div class="mail-list not-read">
+  <table class="mail-body show">
+    <tbody id="star">
+      
+    </tbody>
+  </table>
+</div>`;
+  /* 载入数据 */
+  const star = document.getElementById("star");
+  for (let i = 0; i < nodeXing.length; i++) {
+    star.appendChild(nodeXing[i]);
+  }
+
+  goXing.setAttribute("class", "item item-active");
+  inBox.setAttribute("class", "item");
+  timeOut.setAttribute("class", "item");
   const checkAll = document.getElementById("check-all");
   const checkmails = document.getElementsByName("checkmail");
   // 单个邮件的移入移出
@@ -605,40 +556,25 @@ const Xing = function () {
       };
     }
   })();
-  /* 制止传入星标页 */
-
-  const addXing = document.getElementsByName("add-xing");
-  for (let i = 0; i < addXing.length; i++) {
-    addXing[i].onclick = null;
-    weidus[i].onclick = null;
-  }
-  /* 邮件传到收件箱 */
-  (function () {
-    const recBox = document.getElementsByName("rec-box");
-    for (let i = 0; i < recBox.length; i++) {
-      recBox[i].onclick = function () {
-        let oneMail = recBox[i].parentNode.parentNode.parentNode;
-        nodeBox.push(oneMail);
-        oneMail.parentNode.removeChild(oneMail);
-      };
-    }
-  })();
-
-  /*邮件移动到延时页 */
-  (function () {
-    const addTimeout = document.getElementsByName("add-timeout");
-    for (let i = 0; i < addTimeout.length; i++) {
-      addTimeout[i].onclick = function () {
-        let oneMail = addTimeout[i].parentNode.parentNode.parentNode;
-        nodeTimeout.push(oneMail);
-        oneMail.parentNode.removeChild(oneMail);
-      };
-    }
-  })();
 };
-const timeout = function () {
-  rendertimeout();
-  const listOPen = document.getElementById("list-open");
+/* 延时页的效果 */
+const rendertimeout = function () {
+  root.innerHTML = `<div class="mail-list not-read">
+  
+  <table class="mail-body show">
+    <tbody id="delay-time">
+      
+    </tbody>
+  </table>
+</div>`;
+  /* 载入数据 */
+  const delayTime = document.getElementById("delay-time");
+  for (let i = 0; i < nodeTimeout.length; i++) {
+    delayTime.appendChild(nodeTimeout[i]);
+  }
+  timeOut.setAttribute("class", "item item-active");
+  inBox.setAttribute("class", "item");
+  goXing.setAttribute("class", "item");
   const weidus = document.getElementsByName("weidu");
   const checkAll = document.getElementById("check-all");
   const checkmails = document.getElementsByName("checkmail");
@@ -741,11 +677,79 @@ const timeout = function () {
       };
     }
   })();
+};
+/* 加载页面 */
+const Inbox = function () {
+  renderInbox();
+  /* 制止传入收件箱页 */
+  const recBox = document.getElementsByName("rec-box");
+  for (let i = 0; i < recBox.length; i++) {
+    recBox[i].onclick = null;
+  }
+  /*邮件移动到星标页 */
+  (function () {
+    const addXing = document.getElementsByName("add-xing");
+    for (let i = 0; i < addXing.length; i++) {
+      addXing[i].onclick = function () {
+        let oneMail = addXing[i].parentNode;
+        nodeBox.pop();
+        nodeXing.push(oneMail);
+        renderInbox();
+      };
+    }
+  })();
+  /*邮件移动到延时页`*/
+  (function () {
+    const addTimeout = document.getElementsByName("add-timeout");
+    for (let i = 0; i < addTimeout.length; i++) {
+      addTimeout[i].onclick = function () {
+        let oneMail = addTimeout[i].parentNode.parentNode.parentNode;
+        nodeBox.pop();
+        nodeTimeout.push(oneMail);
+        console.log(nodeTimeout);
+        renderInbox();
+      };
+    }
+  })();
+};
+const Xing = function () {
+  renderXing();
+  /* 制止传入星标页 */
+  const addXing = document.getElementsByName("add-xing");
+  for (let i = 0; i < addXing.length; i++) {
+    addXing[i].onclick = null;
+  }
+  /* 邮件传到收件箱 */
+  (function () {
+    const recBox = document.getElementsByName("rec-box");
+    for (let i = 0; i < recBox.length; i++) {
+      recBox[i].onclick = function () {
+        let oneMail = recBox[i].parentNode.parentNode.parentNode;
+        nodeBox.push(oneMail);
+        nodeXing.pop();
+        renderXing();
+      };
+    }
+  })();
+  /*邮件移动到延时页 */
+  (function () {
+    const addTimeout = document.getElementsByName("add-timeout");
+    for (let i = 0; i < addTimeout.length; i++) {
+      addTimeout[i].onclick = function () {
+        let oneMail = addTimeout[i].parentNode.parentNode.parentNode;
+        nodeXing.pop();
+        nodeTimeout.push(oneMail);
+        renderXing();
+      };
+    }
+  })();
+};
+const timeout = function () {
+  rendertimeout();
   /* 制止传入延时页 */
   const addTimeout = document.getElementsByName("add-timeout");
   for (let i = 0; i < addTimeout.length; i++) {
     addTimeout[i].onclick = null;
-    weidus[i].onclick = null;
   }
   /*邮件移动到星标页 */
   (function () {
@@ -754,7 +758,8 @@ const timeout = function () {
       addXing[i].onclick = function () {
         let oneMail = addXing[i].parentNode;
         nodeXing.push(oneMail);
-        oneMail.parentNode.removeChild(oneMail);
+        nodeTimeout.pop();
+        rendertimeout();
       };
     }
   })();
@@ -765,7 +770,8 @@ const timeout = function () {
       recBox[i].onclick = function () {
         let oneMail = recBox[i].parentNode.parentNode.parentNode;
         nodeBox.push(oneMail);
-        oneMail.parentNode.removeChild(oneMail);
+        nodeTimeout.pop();
+        rendertimeout();
       };
     }
   })();
