@@ -330,19 +330,23 @@ const Inbox = async function () {
     // 单个邮件的移入移出
     function mailFunc() {
       const mailBody = document.getElementsByClassName("mail-item");
+      let details = document.getElementsByClassName("detail");
+      let date = document.getElementsByClassName("date");
+      let handle = document.getElementsByClassName("handle");
       for (let i = 0; i < mailBody.length; i++) {
-        let details = document.getElementsByClassName("detail");
-        let date = document.getElementsByClassName("date");
-        let handle = document.getElementsByClassName("handle");
         mailBody[i].onmouseenter = function () {
-          date[i].style.display = "none";
-          handle[i].style.display = "block";
-          details[i].style.width = "912px";
+          if (date[i] && handle[i] && details[i]) {
+            date[i].style.display = "none";
+            handle[i].style.display = "block";
+            details[i].style.width = "912px";
+          }
         };
         mailBody[i].onmouseleave = function () {
-          date[i].style.display = "block";
-          handle[i].style.display = "none";
-          details[i].style.width = "1002px";
+          if (date[i] && handle[i] && details[i]) {
+            date[i].style.display = "block";
+            handle[i].style.display = "none";
+            details[i].style.width = "1002px";
+          }
         };
       }
     }
@@ -488,10 +492,7 @@ const Inbox = async function () {
       for (let i = 0; i < addTimeout.length; i++) {
         addTimeout[i].onclick = function () {
           let oneMail = addTimeout[i].parentNode.parentNode.parentNode;
-
           nodeTimeout.push(oneMail);
-          oneMail.onmouseenter = null;
-          oneMail.onmouseleave = null;
           oneMail.parentNode.removeChild(oneMail);
         };
       }
