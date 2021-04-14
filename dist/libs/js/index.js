@@ -31,13 +31,13 @@ function drag(node) {
         l = 0;
       }
       if (l >= 1505 - node.offsetWidth) {
-        l = windowWidth;
+        l = 1505 - node.offsetWidth;
       }
       if (t <= 0) {
         t = 0;
       }
       if (t >= 726 - node.offsetHeight) {
-        t = windowHeight;
+        t = 726 - node.offsetHeight;
       }
       node.style.left = l + "px";
       node.style.top = t + "px";
@@ -285,7 +285,7 @@ const renderInbox = function () {
 
   const Receive = document.getElementById("receive");
   for (let i = 0; i < nodeBox.length; i++) {
-    Receive.appendChild(nodeBox[i]);
+    Receive.appendChild(nodeBox[i].cloneNode(true));
   }
   setTimeout(function () {
     const weidus = document.getElementsByName("weidu");
@@ -428,6 +428,8 @@ const renderInbox = function () {
             if (num == checkmails.length) {
               checkAll.checked = true;
               checkAll.setAttribute("class", "iconfont icon-check_box-px");
+              checkallMenu.style.display = "inline-block";
+              more.style.display = "none";
             }
           }
         };
@@ -435,7 +437,6 @@ const renderInbox = function () {
     })();
   }, 1000);
 };
-
 /* 星标页的效果 */
 const renderXing = function () {
   root.innerHTML = `<div class="mail-list not-read">
@@ -448,7 +449,7 @@ const renderXing = function () {
   /* 载入数据 */
   const star = document.getElementById("star");
   for (let i = 0; i < nodeXing.length; i++) {
-    star.appendChild(nodeXing[i]);
+    star.appendChild(nodeXing[i].cloneNode(true));
   }
 
   goXing.setAttribute("class", "item item-active");
@@ -551,6 +552,8 @@ const renderXing = function () {
           if (num == checkmails.length) {
             checkAll.checked = true;
             checkAll.setAttribute("class", "iconfont icon-check_box-px");
+            checkallMenu.style.display = "inline-block";
+            more.style.display = "none";
           }
         }
       };
@@ -570,7 +573,7 @@ const rendertimeout = function () {
   /* 载入数据 */
   const delayTime = document.getElementById("delay-time");
   for (let i = 0; i < nodeTimeout.length; i++) {
-    delayTime.appendChild(nodeTimeout[i]);
+    delayTime.appendChild(nodeTimeout[i].cloneNode(true));
   }
   timeOut.setAttribute("class", "item item-active");
   inBox.setAttribute("class", "item");
@@ -672,6 +675,8 @@ const rendertimeout = function () {
           if (num == checkmails.length) {
             checkAll.checked = true;
             checkAll.setAttribute("class", "iconfont icon-check_box-px");
+            checkallMenu.style.display = "inline-block";
+            more.style.display = "none";
           }
         }
       };
